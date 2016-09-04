@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project b2f -->
+<!-- Saved: 2016-09-04, 13:04:07 -->
+<!-- Copyright (C) 2016 Will_tam,  -->
+<Project version="4.6">
+  <Language>fr_FR</Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>Other</ProjectType>
+  <Description></Description>
+  <Version>0.1</Version>
+  <Author>Will_tam</Author>
+  <Email></Email>
+  <Sources>
+    <Source>b2f.py</Source>
+    <Source>lib/__cpJSONprocessing.py</Source>
+    <Source>lib/__ciJSONprocessing.py</Source>
+    <Source>lib/cJSONprocessInterface.py</Source>
+    <Source>README</Source>
+    <Source>CHANGELOG</Source>
+    <Source>lib/CHANGELOG</Source>
+    <Source>lib/README</Source>
+  </Sources>
+  <Forms>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>b2f.py</MainScript>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+  </FiletypeAssociations>
+</Project>
