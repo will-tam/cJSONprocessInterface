@@ -50,16 +50,20 @@ class ClassJSONProcessInterface():
         """
         return self.__JSONProcess.extractRaw(jsonDatas)
 
-
-
-    ######
+    def extractOnlyKey(self, jsonDatas):
+        """
+        Extract only the keys.
+        @Parameters : jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+        """
+        return self.__JSONProcess.extractOnlyKey(jsonDatas)
 
     def extractValueFrom(self, key, jsonDatas):
         if isinstance(jsonDatas, list):
             print("Données provenant de jsonRead")
-
         else:
             print("Données provenant de ijsonRead")
+
 
 if __name__ == "__main__":
     help(ClassJSONProcessInterface)

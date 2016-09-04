@@ -53,6 +53,17 @@ class ClasspJSONProcessing():
         for data in jsonDatas:
             yield data
 
+    def extractOnlyKey(self, jsonDatas):
+        """
+        Extract only the keys.
+        @Parameters : jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+        """
+        keys = []
+        for datas in jsonDatas:
+            keys = [k[0] for k in datas]
+            yield keys
+
     def extractValueFrom(self, key, jsonDatas):
         print("Données provenant de pjsonRead")
         print(type(jsonDatas))

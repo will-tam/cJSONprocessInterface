@@ -55,6 +55,16 @@ class ClassiJSONProcessing():
                 if prefix.endswith(str(key)) :
                     theList.append((key, value))
 
+    def extractOnlyKey(self, jsonDatas):
+        """
+        Extract only the keys.
+        @Parameters : jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+        """
+        keys = []
+        for datas in self.extractRaw(jsonDatas):        # Using of the iterative datas extraction before.
+            keys = [k[0] for k in datas]
+            yield keys
 
     def extractValueFrom(self, key, jsonDatas):
         """

@@ -20,12 +20,14 @@ def main(arg):
     """
     ITEMS_JSON = "items.json"
     ITERATE = False
-    #ITERATE = True
+    ITERATE = True
 
     json = cJSONProcessInterface.ClassJSONProcessInterface(ITERATE)
     jsonDatas = json.jsonRead(ITEMS_JSON)
 
-    extracted = json.extractRaw(jsonDatas)
+    #extracted = json.extractRaw(jsonDatas)
+    extracted = json.extractOnlyKey(jsonDatas)
+    #extracted = json.extractValueFrom("", jsonDatas)
     print("type extracted :", type(extracted))
 
     if not extracted:
@@ -44,16 +46,6 @@ def main(arg):
         except KeyboardInterrupt:
             goOn = False
 
-    #jsonDatas = items.jsonRead(ITEMS_JSON)
-    #print(jsonDatas)
-
-    #ijsonDatas = items.ijsonRead(ITEMS_JSON)
-    #for ijsonData in ijsonDatas:
-        #print(ijsonData)
-
-    #print(items.extractRaw(ijsonDatas))
-
-    #print(items.extractValueFrom("id", jsonDatas))
 
 
     return 0
