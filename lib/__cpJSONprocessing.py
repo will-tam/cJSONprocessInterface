@@ -44,22 +44,14 @@ class ClasspJSONProcessing():
             print(e)
             return False
 
-    def extractRaw(self, functionExtractRaw):
+    def  extractRaw(self, jsonDatas):
         """
-        Decorator of extractRaw.
-        @Parameters : functionExtractRaw = extractRaw function it-self.
-        @Return : the yield of closure extractRawReal.
+        Extract the datas as-is.
+        @Parameters : jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
         """
-        def extractRawReal(listArgs):
-            """
-            The really be runned generator datas extractor.
-            @Parameters : listArgs = extractRaw arguments them-self.
-            @Return : yield the extracted element.
-            """
-            for element in listArgs:
-                yield element
-        return extractRawReal
-
+        for data in jsonDatas:
+            yield data
 
     def extractValueFrom(self, key, jsonDatas):
         print("Données provenant de pjsonRead")

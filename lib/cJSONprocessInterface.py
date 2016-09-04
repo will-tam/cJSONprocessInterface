@@ -48,16 +48,7 @@ class ClassJSONProcessInterface():
         @Parameters : jsonDatas = the json's datas.
         @Return : the result of the closure extractRawFake().
         """
-        @self.__JSONProcess.extractRaw
-        def extractRawFake(jsonDatas):
-            """
-            Just to benefit of decorator.
-            @Parameters : jsonDatas = the json's datas.
-            @Return : none.
-            """
-            pass
-
-        return extractRawFake(jsonDatas)    # On bénéficie du self pour se brancher le bon décorateur.
+        return self.__JSONProcess.extractRaw(jsonDatas)
 
 
 

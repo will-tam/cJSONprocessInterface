@@ -2,15 +2,15 @@
 <!DOCTYPE Session SYSTEM "Session-4.4.dtd">
 <!-- eric4 session file for project b2f -->
 <!-- This file was generated automatically, do not edit. -->
-<!-- Saved: 2016-09-04, 13:04:18 -->
+<!-- Saved: 2016-09-04, 18:26:30 -->
 <Session version="4.4">
   <Filenames>
-    <Filename cline="45" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/__ciJSONprocessing.py</Filename>
-    <Filename cline="52" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/__cpJSONprocessing.py</Filename>
-    <Filename cline="43" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/cJSONprocessInterface.py</Filename>
-    <Filename cline="22" cindex="4" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/b2f.py</Filename>
+    <Filename cline="22" cindex="5" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/b2f.py</Filename>
+    <Filename cline="40" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/__ciJSONprocessing.py</Filename>
+    <Filename cline="47" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/__cpJSONprocessing.py</Filename>
+    <Filename cline="51" cindex="0" folds="" zoom="0">/home/will/data/programmation/python/bamboo2Firefox/lib/cJSONprocessInterface.py</Filename>
   </Filenames>
-  <ActiveWindow cline="22" cindex="4">/home/will/data/programmation/python/bamboo2Firefox/b2f.py</ActiveWindow>
+  <ActiveWindow cline="51" cindex="0">/home/will/data/programmation/python/bamboo2Firefox/lib/cJSONprocessInterface.py</ActiveWindow>
   <Breakpoints>
   </Breakpoints>
   <Watchexpressions>

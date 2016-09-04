@@ -37,30 +37,23 @@ class ClassiJSONProcessing():
             print(e)
             return False
 
-    def extractRaw(self, functionExtractRaw):
+    def extractRaw(self, jsonDatas):
         """
-        Decorator of extractRaw.
-        @Parameters : functionExtractRaw = extractRaw function it-self.
-        @Return : the yield of closure extractRawReal.
+        Extract the datas as-is.
+        @Parameters : jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
         """
-        def extractRawReal(listArgs):
-            """
-            The really be runned generator datas extractor.
-            @Parameters : listArgs = extractRaw arguments them-self.
-            @Return : yield the extracted element.
-            """
-            key = None
-            for prefix, event, value in listArgs:
-                if event == "start_map":
-                    theList = []
-                elif event == "map_key":
-                    key = value
-                elif event == "end_map":
-                    yield theList
-                else:
-                    if prefix.endswith(str(key)) :
-                        theList.append((key, value))
-        return extractRawReal
+        key = None
+        for prefix,  event, value in jsonDatas:
+            if event == "start_map":
+                theList = []
+            elif event == "map_key":
+                key = value
+            elif event == "end_map":
+                yield theList
+            else:
+                if prefix.endswith(str(key)) :
+                    theList.append((key, value))
 
 
     def extractValueFrom(self, key, jsonDatas):

@@ -20,7 +20,7 @@ def main(arg):
     """
     ITEMS_JSON = "items.json"
     ITERATE = False
-    ITERATE = True
+    #ITERATE = True
 
     json = cJSONProcessInterface.ClassJSONProcessInterface(ITERATE)
     jsonDatas = json.jsonRead(ITEMS_JSON)
