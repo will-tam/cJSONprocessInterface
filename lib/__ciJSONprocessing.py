@@ -68,9 +68,34 @@ class ClassiJSONProcessing():
 
     def extractValueFrom(self, key, jsonDatas):
         """
+        Extract a value from a key.
+        @Parameters : key = the key to return with its datas.
+                            jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+                        If "key" is NOT exist in jsonDatas, return None.
         """
-        print("Données provenant de ijsonRead")
+        try:
+            for datas in self.extractRaw(jsonDatas):
+                yield [(k, v) for k, v in datas if k == key][0]        # Take the first element only of the list
+        except IndexError:
+            yield None
 
+    def extractSeveralFrom(self, keys, jsonDatas):
+        """
+        Extract a values from several keys.
+        @Parameters : keys = list of keys to return with their datas.
+                            jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+                        If one of the "keys" is NOT exist in jsonDatas, return None.
+        """
+        try:
+            for datas in self.extractRaw(jsonDatas):
+                data = []
+                for key in keys:
+                    data.append([(k, v) for k, v in datas if k == key][0])    # Take the first element only of the list
+                yield data
+        except IndexError:
+            yield None
 
 if __name__ == "__main__":
     help(ClassiJSONProcessing)

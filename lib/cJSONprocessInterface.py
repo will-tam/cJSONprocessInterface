@@ -59,10 +59,23 @@ class ClassJSONProcessInterface():
         return self.__JSONProcess.extractOnlyKey(jsonDatas)
 
     def extractValueFrom(self, key, jsonDatas):
-        if isinstance(jsonDatas, list):
-            print("Données provenant de jsonRead")
-        else:
-            print("Données provenant de ijsonRead")
+        """
+        Extract a value from a key.
+        @Parameters : key = the keys to return with iits datas.
+                            jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+        """
+        return self.__JSONProcess.extractValueFrom(key, jsonDatas)
+
+    def extractSeveralFrom(self, keys, jsonDatas):
+        """
+        Extract a values from several keys.
+        @Parameters : keys = list of keys to return with their datas.
+                            jsonDatas = the json's datas.
+        @Return : the result of the closure extractRawFake().
+                        If one of the "keys" is NOT exist in jsonDatas, return None.
+        """
+        return self.__JSONProcess.extractSeveralFrom(keys, jsonDatas)
 
 
 if __name__ == "__main__":

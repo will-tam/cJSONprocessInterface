@@ -26,8 +26,9 @@ def main(arg):
     jsonDatas = json.jsonRead(ITEMS_JSON)
 
     #extracted = json.extractRaw(jsonDatas)
-    extracted = json.extractOnlyKey(jsonDatas)
-    #extracted = json.extractValueFrom("", jsonDatas)
+    #extracted = json.extractOnlyKey(jsonDatas)
+    #extracted = json.extractValueFrom("url", jsonDatas)
+    extracted = json.extractSeveralFrom(["id", "url"], jsonDatas)
     print("type extracted :", type(extracted))
 
     if not extracted:
