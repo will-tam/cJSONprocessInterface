@@ -2,19 +2,17 @@
 
 # Standard libraries import.
 import codecs
+import os
 
 # Third libraries import.
-import lib.__cpJSONprocessing as cpyJSONProcess
-import lib.__ciJSONprocessing as ciJSONProcess
+import __cpJSONprocessing as cpyJSONProcess
+import __ciJSONprocessing as ciJSONProcess
 
 # Projet modules import.
 
 class ClassJSONProcessInterface():
     """
     JSON various handling interface.
-
-    Public attributes :
-        self.jsonDatas = datas after parsing. It's a simple json datas OR ijson datas.
     """
 
     # Private attributes:
@@ -30,7 +28,6 @@ class ClassJSONProcessInterface():
         choice = {True : ciJSONProcess.ClassiJSONProcessing(),
                          False : cpyJSONProcess.ClasspJSONProcessing()}
 
-        self.jsonDatas = None
         self.__iterate = iterate
         self.__JSONProcess  = choice[self.__iterate]
 
@@ -46,7 +43,7 @@ class ClassJSONProcessInterface():
         """
         Extract the datas as-is.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : raw-like extracted datas.
         """
         return self.__JSONProcess.extractRaw(jsonDatas)
 
@@ -54,16 +51,17 @@ class ClassJSONProcessInterface():
         """
         Extract only the keys.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : only the keys are extracted.
         """
         return self.__JSONProcess.extractOnlyKey(jsonDatas)
 
     def extractValueFrom(self, key, jsonDatas):
         """
         Extract a value from a key.
-        @Parameters : key = the keys to return with iits datas.
+        @Parameters : key = the keys to return with its datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : the asked key and its value.
+                        If key is not exists in jsonDatas, return None.
         """
         return self.__JSONProcess.extractValueFrom(key, jsonDatas)
 
@@ -72,7 +70,7 @@ class ClassJSONProcessInterface():
         Extract a values from several keys.
         @Parameters : keys = list of keys to return with their datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : the asked keys and their associated values.
                         If one of the "keys" is NOT exist in jsonDatas, return None.
         """
         return self.__JSONProcess.extractSeveralFrom(keys, jsonDatas)
