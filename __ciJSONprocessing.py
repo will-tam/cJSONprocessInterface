@@ -39,9 +39,9 @@ class ClassiJSONProcessing():
 
     def extractRaw(self, jsonDatas):
         """
-        Extract the datas as-is.
+        Generator : extract the datas as-is.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the raw-like extracted datas.
         """
         key = None
         for prefix,  event, value in jsonDatas:
@@ -57,9 +57,9 @@ class ClassiJSONProcessing():
 
     def extractOnlyKey(self, jsonDatas):
         """
-        Extract only the keys.
+        Generator : extract only the keys.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : only the keys are generated.
         """
         keys = []
         for datas in self.extractRaw(jsonDatas):        # Using of the iterative datas extraction before.
@@ -68,10 +68,10 @@ class ClassiJSONProcessing():
 
     def extractValueFrom(self, key, jsonDatas):
         """
-        Extract a value from a key.
+        Generator : extract a value from a key.
         @Parameters : key = the key to return with its datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the asked key and its value.
                         If "key" is NOT exist in jsonDatas, return None.
         """
         try:
@@ -82,10 +82,10 @@ class ClassiJSONProcessing():
 
     def extractSeveralFrom(self, keys, jsonDatas):
         """
-        Extract a values from several keys.
+        Generator : extract a values from several keys.
         @Parameters : keys = list of keys to return with their datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the asked keys and their associated values.
                         If one of the "keys" is NOT exist in jsonDatas, return None.
         """
         try:

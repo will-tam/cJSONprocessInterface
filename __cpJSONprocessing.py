@@ -46,18 +46,18 @@ class ClasspJSONProcessing():
 
     def  extractRaw(self, jsonDatas):
         """
-        Extract the datas as-is.
+        Generator : extract the datas as-is.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the raw-like extracted datas.
         """
         for data in jsonDatas:
             yield data
 
     def extractOnlyKey(self, jsonDatas):
         """
-        Extract only the keys.
+        Generator : extract only the keys.
         @Parameters : jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : only the keys are generated.
         """
         for datas in jsonDatas:
             keys = [k[0] for k in datas]
@@ -65,10 +65,10 @@ class ClasspJSONProcessing():
 
     def extractValueFrom(self, key, jsonDatas):
         """
-        Extract a value from a key.
+        Generator : extract a value from a key.
         @Parameters : key = the key to return with its datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the asked key and its value.
                         If "key" is NOT exist in jsonDatas, return None.
         """
         try:
@@ -79,10 +79,10 @@ class ClasspJSONProcessing():
 
     def extractSeveralFrom(self, keys, jsonDatas):
         """
-        Extract a values from several keys.
+        Generator : extract a values from several keys.
         @Parameters : keys = list of keys to return with their datas.
                             jsonDatas = the json's datas.
-        @Return : the result of the closure extractRawFake().
+        @Return : generate the asked keys and their associated values.
                         If one of the "keys" is NOT exist in jsonDatas, return None.
         """
         try:
